@@ -49,21 +49,30 @@ Return
     Send, ^y
 Return
 
+<!+9::
+    Send, {ShiftDown}{Up}{Up}{Up}{Up}{Up}{Up}{Up}{Up}{Up}{Up}{ShiftUp}
+Return
 <!9::
     Send, {Up}{Up}{Up}{Up}{Up}{Up}{Up}{Up}{Up}{Up}
+Return
+<!+,::
+    Send, {ShiftDown}{Down}{Down}{Down}{Down}{Down}{Down}{Down}{Down}{Down}{Down}{ShiftUp}
 Return
 <!,::
     Send, {Down}{Down}{Down}{Down}{Down}{Down}{Down}{Down}{Down}{Down}
 Return
+
 <!^9::
-<!^+9::
-<!+9::
     Send, {PgUp}
 Return
+<!^+9::
+    Send, +{PgUp}
+Return
 <!^,::
-<!^+,::
-<!+,::
     Send, {PgDn}
+Return
+<!^+,::
+    Send, +{PgDn}
 Return
 
 <!/::
@@ -72,49 +81,49 @@ Return
 
 <!o::
     If (DoubleAlt)
-        Send, {PgDn}
+        Send, !{End}
     Else
         Send, {End}
 Return
 <!u::
     If (DoubleAlt)
-        Send, {PgUp}
+        Send, !{Home}
     Else
         Send, {Home}
 Return
 <!+o::
     If (DoubleAlt)
-        Send, +{PgDn}
+        Send, !+{End}
     Else
         Send, +{End}
 Return
 <!+u::
     If (DoubleAlt)
-        Send, +{PgUp}
+        Send, !+{Home}
     Else
         Send, +{Home}
 Return
 <!+^o::
     If (DoubleAlt)
-        Send, +^{PgDn}
+        Send, !+^{End}
     Else
         Send, +^{End}
 Return
 <!+^u::
     If (DoubleAlt)
-        Send, +^{PgUp}
+        Send, !+^{Home}
     Else
         Send, +^{Home}
 Return
 <!^o::
     If (DoubleAlt)
-        Send, ^{PgDn}
+        Send, !^{End}
     Else
         Send, ^{End}
 Return
 <!^u::
     If (DoubleAlt)
-        Send, ^{PgUp}
+        Send, !^{Home}
     Else
         Send, ^{Home}
 Return
