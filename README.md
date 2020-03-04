@@ -1,6 +1,9 @@
 # alt-hotkey
 A collection of useful shortcuts that I use. These are optimized for QWERTY. 
 
+To use these you need to have [AutoHotKey](https://www.autohotkey.com/) installed on your computer (no linux/macOS support 😒).
+When installed, download the .ahk file and open it.
+
 ### Navigation & Selection
 *All of these can be used with <kbd>Shirt</kbd> and <kbd>Ctrl</kbd> to select and jump words.*
 
@@ -33,7 +36,7 @@ A collection of useful shortcuts that I use. These are optimized for QWERTY.
 
 ## Double Alt Mode
 
-<kbd>Double Alt</kbd> = <kbd>Alt</kbd>+<kbd>Alt</kbd> (A dialog will be shown when double alt mode is active)
+<kbd>Double Alt</kbd> = <kbd>Alt</kbd> <kbd>Alt</kbd> (A dialog will be shown when double alt mode is active)
 
 *Shortcuts made in the double alt mode are just the normal navigation & selection shortcuts, but with an <kbd>Alt</kbd> added.*
 
