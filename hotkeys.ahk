@@ -1,229 +1,141 @@
-﻿#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
+#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
 ; #Warn  ; Enable warnings to assist with detecting common errors.
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
-; LAlt::Return 
+<!j::
+    Send, {Left}
+Return
+<!l::
+    Send, {Right}
+Return
+<!i::
+    Send, {Up}
+Return
+<!k::
+    Send, {Down}
+Return
 
 LAlt::
-    ; If (A_PriorHotKey = A_ThisHotKey and A_TimeSincePriorHotkey < 500)
-    DoubleAlt := !DoubleAlt
-    If (DoubleAlt)
-    {
-        SplashTextOn, 200, 0, "Double alt mode"
-    }
-    Else 
-    {
-        SplashTextOff
-    }
+<!Space::
+Return
+
+<!^j::
+    Send, ^{Left}
+Return
+<!^l::
+    Send, ^{Right}
+Return
+<!^i::
+    Send, !{Up} ; move line up
+Return
+<!^k::
+    Send, !{Down} ; move line down
+Return
+
+<!+j::
+    Send, +{Left}
+Return
+<!+l::
+    Send, +{Right}
+Return
+<!+i::
+    Send, +{Up}
+Return
+<!+k::
+    Send, +{Down}
+Return
+
+<!+^j::   
+    Send, +^{Left}
+Return
+<!+^l::
+    Send, +^{Right}
+Return
+<!+^i::
+    Send, +^{Up}
+Return
+<!+^k::
+    Send, +^{Down}
+Return
+
+<!o::
+    Send, {End}
+Return
+<!u::
+    Send, {Home}
+Return
+
+<!^o::
+<!^+o::
+<!+o::
+    Send, +{End}
+Return
+<!^u::
+<!^+u::
+<!+u::
+    Send, +{Home}
+Return
+
+<!h::
+    Send, {End}{ShiftDown}{Home}{Home}{ShiftUp}
+Return
+<!^+h::
+    Send, {End}{ShiftDown}{Home}{Home}{ShiftUp}^c
+<!+h::
+    Send, ?{End}{ShiftDown}{Home}{Home}{ShiftUp}{Backspace}{Backspace}
+Return
+<!^h::
+    Send, {End}{ShiftDown}{Home}{Home}{ShiftUp}^c{End}{Enter}^v
+Return
+
+<!9::
+<!8::
+    Send, {Up}{Up}{Up}{Up}{Up}{Up}{Up}{Up}
+Return
+<!,::
+<!.::
+    Send, {Down}{Down}{Down}{Down}{Down}{Down}{Down}{Down}
+Return
+<!+9::
+<!+8::
+    Send, {ShiftDown}{Up}{Up}{Up}{Up}{Up}{Up}{Up}{Up}{ShiftUp}
+Return
+<!+,::
+<!+.::
+    Send, {ShiftDown}{Down}{Down}{Down}{Down}{Down}{Down}{Down}{Down}{ShiftUp}
+Return
+
+<!^9::
+<!^8::
+    Send, {PgUp}
+Return
+<!^,::
+<!^.::
+    Send, {PgDn}
+Return
+<!^+9::
+<!^+8::
+    Send, +{PgUp}
+Return
+<!^+,::
+<!^+.::
+    Send, +{PgDn}
 Return
 
 <!Enter::
     Send, {End}{Enter}
 Return     
 <!^Enter::  
+<!^+Enter::  
 <!+Enter::  
-    Send, {Up}{End}{Enter}
-Return
-<!h::
-    Send, {Home}{Home}+{End}
-Return
-<!+h::
-    Send, {Home}{Home}+{End}{BackSpace}{BackSpace}
-Return
-<!^h::
-    Send, {Home}+{End}^c{End}{Enter}^v
+    Send, {Home}{Enter}{Up}
 Return
 
-<!d::
-    Send, {Delete}
+<!Backspace::
+    Send,^{Left}^{Right}{ShiftDown}^{Left}{ShiftUp}{Backspace}
 Return
+
 <!s::
-    Send, {BackSpace}
-Return
-
-<!z::
-    Send, ^z
-Return
-<!x::
-    Send, ^y
-Return
-
-<!+9::
-    Send, {ShiftDown}{Up}{Up}{Up}{Up}{Up}{Up}{Up}{Up}{Up}{Up}{ShiftUp}
-Return
-<!9::
-    Send, {Up}{Up}{Up}{Up}{Up}{Up}{Up}{Up}{Up}{Up}
-Return
-<!+,::
-    Send, {ShiftDown}{Down}{Down}{Down}{Down}{Down}{Down}{Down}{Down}{Down}{Down}{ShiftUp}
-Return
-<!,::
-    Send, {Down}{Down}{Down}{Down}{Down}{Down}{Down}{Down}{Down}{Down}
-Return
-
-<!^9::
-    Send, {PgUp}
-Return
-<!^+9::
-    Send, +{PgUp}
-Return
-<!^,::
-    Send, {PgDn}
-Return
-<!^+,::
-    Send, +{PgDn}
-Return
-
-<!/::
-    Send, {Home}{Home}
-Return
-
-<!o::
-    If (DoubleAlt)
-        Send, !{End}
-    Else
-        Send, {End}
-Return
-<!u::
-    If (DoubleAlt)
-        Send, !{Home}
-    Else
-        Send, {Home}
-Return
-<!+o::
-    If (DoubleAlt)
-        Send, !+{End}
-    Else
-        Send, +{End}
-Return
-<!+u::
-    If (DoubleAlt)
-        Send, !+{Home}
-    Else
-        Send, +{Home}
-Return
-<!+^o::
-    If (DoubleAlt)
-        Send, !+^{End}
-    Else
-        Send, +^{End}
-Return
-<!+^u::
-    If (DoubleAlt)
-        Send, !+^{Home}
-    Else
-        Send, +^{Home}
-Return
-<!^o::
-    If (DoubleAlt)
-        Send, !^{End}
-    Else
-        Send, ^{End}
-Return
-<!^u::
-    If (DoubleAlt)
-        Send, !^{Home}
-    Else
-        Send, ^{Home}
-Return
-
-<!j::
-    If (DoubleAlt)
-        Send, !{Left}
-    Else
-        Send, {Left}
-Return
-<!i::
-    If (DoubleAlt) 
-        Send, !{Up}
-    Else 
-        Send, {Up}
-Return
-<!l::
-    If (DoubleAlt)
-        Send, !{Right}
-    Else
-        Send, {Right}
-Return
-<!k::
-    If (DoubleAlt) 
-        Send, !{Down}
-    Else 
-        Send, {Down}
-Return
-
-<!+j::
-    If (DoubleAlt)
-        Send, !+{Left}
-    Else
-        Send, +{Left}
-Return
-<!+i::
-    If (DoubleAlt) 
-        Send, !+{Up}
-    Else 
-        Send, +{Up}
-Return
-<!+l::
-    If (DoubleAlt)
-        Send, !+{Right}
-    Else
-        Send, +{Right}
-Return
-<!+k::
-    If (DoubleAlt) 
-        Send, !+{Down}
-    Else 
-        Send, +{Down}
-Return
-
-<!+^j::
-    If (DoubleAlt)
-        Send, !+^{Left}
-    Else
-        Send, +^{Left}
-Return
-<!+^i::
-    If (DoubleAlt) 
-        Send, !+^{Up}
-    Else 
-        Send, +^{Up}
-Return
-<!+^l::
-    If (DoubleAlt)
-        Send, !+^{Right}
-    Else
-        Send, +^{Right}
-Return
-<!+^k::
-    If (DoubleAlt) 
-        Send, !+^{Down}
-    Else 
-        Send, +^{Down}
-Return
-
-<!^j::
-    If (DoubleAlt)
-        Send, !^{Left}
-    Else
-        Send, ^{Left}
-Return
-<!^i::
-    If (DoubleAlt) 
-        Send, !^{Up}
-    Else 
-        Send, ^{Up}
-Return
-<!^l::
-    If (DoubleAlt)
-        Send, !^{Right}
-    Else
-        Send, ^{Right}
-Return
-<!^k::
-    If (DoubleAlt) 
-        Send, !^{Down}
-    Else 
-        Send, ^{Down}
+    Send, {Delete}
 Return
