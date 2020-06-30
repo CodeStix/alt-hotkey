@@ -1,8 +1,18 @@
 # alt-hotkey
-A collection of useful shortcuts that I use. These are optimized for QWERTY. 
+A collection of useful shortcuts that I use. These are optimized for QWERTY. Versions available for AutoHotKey (Windows) and AutoKey (Linux).
 
-To use these you need to have [AutoHotKey](https://www.autohotkey.com/) installed on your computer (no linux/macOS support 😒).
-When installed, download the .ahk file and open it.
+## Windows
+
+To use these you need to have [AutoHotKey](https://www.autohotkey.com/) installed on your compute.
+When installed, download the *autohotkey/alt-hotkey.ahk* file and open it.
+
+## Linux
+
+To use these you need to install [AutoKey](https://github.com/autokey/autokey/releases) on your system.
+Then, either download *autokey/generated.zip* and unzip and import into AutoKey or use the *autokey/autokey-generate.py* script to generate the AutoKey files for you:
+`python3 autokey-generate.py <output_dir>`
+
+## Usage
 
 ### Navigation & Selection
 ℹ️ **Most of these can be used with <kbd>Shirt</kbd> and <kbd>Ctrl</kbd> to select and jump words.**
