@@ -105,15 +105,15 @@ Return
 Return
 <!+^o::
     If (DoubleAlt)
-        Send, !+^{End}
-    Else
         Send, +^{End}
+    Else
+        Send, ^{End}
 Return
 <!+^u::
     If (DoubleAlt)
-        Send, !+^{Home}
-    Else
         Send, +^{Home}
+    Else
+        Send, ^{Home}
 Return
 <!^o::
     If (DoubleAlt)
