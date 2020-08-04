@@ -123,12 +123,16 @@ Return
     Send, +{PgDn}
 Return
 
+<!+Enter::  
+    Send, +{End}^x{Down}{End}^v
+Return
+<!^+Enter::  
+    Send, +{End}^x{Up}{End}^v
+Return
 <!Enter::
     Send, {End}{Enter}
-Return     
+Return 
 <!^Enter::  
-<!^+Enter::  
-<!+Enter::  
     Send, {Home}{Enter}{Up}
 Return
 
