@@ -1,5 +1,5 @@
 #NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
-; #Warn  ; Enable warnings to assist with detecting common errors.
+#Warn  ; Enable warnings to assist with detecting common errors.
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
@@ -123,11 +123,24 @@ Return
     Send, +{PgDn}
 Return
 
+MoveLeftClipboard() {
+    ClipWait
+    i := StrLen(Clipboard)
+    While i > 0 {
+        Send, {Left}
+        i -= 1
+    }
+}
+
 <!+Enter::  
-    Send, +{End}^x{Down}{End}^v
+    Clipboard := ""
+    Send, +{End}^c{Backspace}{Down}{End}^v
+    MoveLeftClipboard()
 Return
 <!^+Enter::  
-    Send, +{End}^x{Up}{End}^v
+    Clipboard := ""
+    Send, +{End}^c{Backspace}{Up}{End}^v
+    MoveLeftClipboard()
 Return
 <!Enter::
     Send, {End}{Enter}
@@ -137,7 +150,7 @@ Return
 Return
 
 <!Backspace::
-    Send,^{Left}^{Right}{ShiftDown}^{Left}{ShiftUp}{Backspace}
+    Send,^{Left}^{Right}+^{Left}{Backspace}
 Return
 
 <!s::
