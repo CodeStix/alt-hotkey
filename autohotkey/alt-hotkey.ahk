@@ -78,7 +78,7 @@ Return
 Return
 
 <!h::
-    Send, {End}{ShiftDown}{Home}{Home}{ShiftUp}
+    Send, {ShiftDown}{End}{ShiftUp}{Backspace}
 Return
 <!^+h::
     Send, {End}{ShiftDown}{Home}{Home}{ShiftUp}^c
