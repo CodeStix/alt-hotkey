@@ -89,4 +89,5 @@ createHotKey("<alt>+<ctrl>+h",
              "<home><home><shift>+<end><ctrl>+c<end><enter><ctrl>+v")
 createHotKey("<alt>+<enter>", "<end><enter>")
 createHotKey("<alt>+<shift>+<enter>", "<home><home><enter><up>")
-createHotKey("<alt>+<s>", "<delete>")
+createHotKey("<alt>+s", "<delete>")
+createHotKey("<alt>+<backspace>", "<ctrl>+<backspace>")
