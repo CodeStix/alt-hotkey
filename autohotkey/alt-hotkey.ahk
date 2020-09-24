@@ -150,7 +150,7 @@ Return
 Return
 
 <!Backspace::
-    Send,^{Left}^{Right}+^{Left}{Backspace}
+    Send,^{Backspace}
 Return
 
 <!s::
