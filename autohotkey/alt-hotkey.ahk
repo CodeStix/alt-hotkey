@@ -83,10 +83,10 @@ Return
 <!^+h::
     Send, {End}{ShiftDown}{Home}{Home}{ShiftUp}^c
 <!+h::
-    Send, ?{End}{ShiftDown}{Home}{Home}{ShiftUp}{Backspace}{Backspace}
+    Send, ?{End}{ShiftDown}{Home}{Home}{ShiftUp}{Backspace}{Backspace}  
 Return
 <!^h::
-    Send, {End}{ShiftDown}{Home}{Home}{ShiftUp}^c{End}{Enter}^v
+    Send, {End}{ShiftDown}{Home}{ShiftUp}^c{End}{Enter}^v
 Return
 
 <!9::
