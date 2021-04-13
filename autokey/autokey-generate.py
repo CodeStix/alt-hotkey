@@ -60,14 +60,14 @@ createHotKey("<alt>+<ctrl>+i", "<alt>+<up>")
 createHotKey("<alt>+<ctrl>+j", "<ctrl>+<left>")
 createHotKey("<alt>+<ctrl>+k", "<alt>+<down>")
 createHotKey("<alt>+<ctrl>+l", "<ctrl>+<right>")
-createHotKey("<alt>+<ctrl>+o", "<ctrl>+<end>")
-createHotKey("<alt>+<ctrl>+u", "<ctrl>+<home>")
+createHotKey("<alt>+<ctrl>+o", "<shift>+<end>")
+createHotKey("<alt>+<ctrl>+u", "<shift>+<home>")
 createHotKey("<alt>+<shift>+<ctrl>+i", "<ctrl>+<shift>+<up>")
 createHotKey("<alt>+<shift>+<ctrl>+j", "<ctrl>+<shift>+<left>")
 createHotKey("<alt>+<shift>+<ctrl>+k", "<ctrl>+<shift>+<down>")
 createHotKey("<alt>+<shift>+<ctrl>+l", "<ctrl>+<shift>+<right>")
-createHotKey("<alt>+<shift>+<ctrl>+o", "<ctrl>+<shift>+<end>")
-createHotKey("<alt>+<shift>+<ctrl>+u", "<ctrl>+<shift>+<home>")
+createHotKey("<alt>+<shift>+<ctrl>+o", "<shift>+<end>")
+createHotKey("<alt>+<shift>+<ctrl>+u", "<shift>+<home>")
 
 createHotKey("<alt>+9", "<up><up><up><up><up><up><up><up>")
 createHotKey("<alt>+,", "<down><down><down><down><down><down><down><down>")
@@ -87,7 +87,12 @@ createHotKey("<alt>+<shift>+h",
              "<home><home><shift>+<end>a<backspace><backspace>")
 createHotKey("<alt>+<ctrl>+h",
              "<home><home><shift>+<end><ctrl>+c<end><enter><ctrl>+v")
+
 createHotKey("<alt>+<enter>", "<end><enter>")
-createHotKey("<alt>+<shift>+<enter>", "<home><home><enter><up>")
+createHotKey("<alt>+<ctrl>+<enter>", "<home><enter><up>")
+createHotKey("<alt>+<shift>+<enter>", "<home><enter><up>")
+createHotKey("<alt>+<shift>+<ctrl>+<enter>", "<home><enter><up>")
+
 createHotKey("<alt>+s", "<delete>")
+
 createHotKey("<alt>+<backspace>", "<ctrl>+<backspace>")
