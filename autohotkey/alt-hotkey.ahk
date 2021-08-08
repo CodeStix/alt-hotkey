@@ -13,6 +13,51 @@ Return
     Send, !{F4}
 Return
 
+GotoInputDown:
+    Input, OutputVar, L2, {Enter}{Space}{Esc}
+    OutputVar := StrReplace(OutputVar, "j", "1")    
+    OutputVar := StrReplace(OutputVar, "k", "2")    
+    OutputVar := StrReplace(OutputVar, "l", "3")   
+    OutputVar := StrReplace(OutputVar, "u", "4")    
+    OutputVar := StrReplace(OutputVar, "i", "5")    
+    OutputVar := StrReplace(OutputVar, "o", "6")    
+    OutputVar := StrReplace(OutputVar, "&", "7")    
+    OutputVar := StrReplace(OutputVar, "*", "8")    
+    OutputVar := StrReplace(OutputVar, "(", "9")    
+    OutputVar := StrReplace(OutputVar, ")", "0")    
+    
+    OutputValue := Abs(OutputVar)
+    Loop %OutputValue% {
+        Send, {Down}
+    }
+Return
+
+GotoInputUp:
+    Input, OutputVar, L2, {Enter}{Space}{Esc}
+    OutputVar := StrReplace(OutputVar, "j", "1")    
+    OutputVar := StrReplace(OutputVar, "k", "2")    
+    OutputVar := StrReplace(OutputVar, "l", "3")    
+    OutputVar := StrReplace(OutputVar, "u", "4")    
+    OutputVar := StrReplace(OutputVar, "i", "5")    
+    OutputVar := StrReplace(OutputVar, "o", "6")    
+    OutputVar := StrReplace(OutputVar, "&", "7")    
+    OutputVar := StrReplace(OutputVar, "*", "8")    
+    OutputVar := StrReplace(OutputVar, "(", "9")    
+    OutputVar := StrReplace(OutputVar, ")", "0")    
+    
+    OutputValue := Abs(OutputVar)
+    Loop %OutputValue% {
+        Send, {Up}
+    }
+Return
+
+<!0::
+    Gosub, GotoInputUp
+Return
+<!.::
+    Gosub, GotoInputDown
+Return
+
 <!j::
     Send, {Left}
 Return
@@ -104,7 +149,6 @@ Return
     Send, {Up}{Up}{Up}{Up}{Up}{Up}{Up}{Up}
 Return
 <!,::
-<!.::
     Send, {Down}{Down}{Down}{Down}{Down}{Down}{Down}{Down}
 Return
 <!+9::
@@ -112,7 +156,6 @@ Return
     Send, {ShiftDown}{Up}{Up}{Up}{Up}{Up}{Up}{Up}{Up}{ShiftUp}
 Return
 <!+,::
-<!+.::
     Send, {ShiftDown}{Down}{Down}{Down}{Down}{Down}{Down}{Down}{Down}{ShiftUp}
 Return
 
@@ -121,7 +164,6 @@ Return
     Send, {PgUp}
 Return
 <!^,::
-<!^.::
     Send, {PgDn}
 Return
 <!^+9::
@@ -129,7 +171,6 @@ Return
     Send, +{PgUp}
 Return
 <!^+,::
-<!^+.::
     Send, +{PgDn}
 Return
 
