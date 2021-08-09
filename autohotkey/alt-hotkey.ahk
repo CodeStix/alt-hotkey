@@ -13,6 +13,22 @@ Return
     Send, !{F4}
 Return
 
+<!z::
+    Send, ^{z}
+Return
+<!a::
+    Send, ^{y}
+Return
+<!c::
+    Send, ^{c}
+Return
+<!v::
+    Send, ^{v}
+Return
+<!x::
+    Send, ^{x}
+Return
+
 GotoInputDown:
     Input, OutputVar, L2, {Enter}{Space}{Esc}
     OutputVar := StrReplace(OutputVar, "j", "1")    
@@ -51,126 +67,126 @@ GotoInputUp:
     }
 Return
 
-<!0::
+!0::
     Gosub, GotoInputUp
 Return
-<!.::
+!.::
     Gosub, GotoInputDown
 Return
 
-<!j::
+!j::
     Send, {Left}
 Return
-<!l::
+!l::
     Send, {Right}
 Return
-<!i::
+!i::
     Send, {Up}
 Return
-<!k::
+!k::
     Send, {Down}
 Return
 
 LAlt::
-<!Space::
+!Space::
 Return
 
-<!^j::
+!^j::
     Send, ^{Left}
 Return
-<!^l::
+!^l::
     Send, ^{Right}
 Return
-<!^i::
+!^i::
     Send, !{Up} ; move line up
 Return
-<!^k::
+!^k::
     Send, !{Down} ; move line down
 Return
 
-<!+j::
+!+j::
     Send, +{Left}
 Return
-<!+l::
+!+l::
     Send, +{Right}
 Return
-<!+i::
+!+i::
     Send, +{Up}
 Return
-<!+k::
+!+k::
     Send, +{Down}
 Return
 
-<!+^j::   
+!+^j::   
     Send, +^{Left}
 Return
-<!+^l::
+!+^l::
     Send, +^{Right}
 Return
-<!+^i::
+!+^i::
     Send, +^{Up}
 Return
-<!+^k::
+!+^k::
     Send, +^{Down}
 Return
 
-<!o::
+!o::
     Send, {End}
 Return
-<!u::
+!u::
     Send, {Home}
 Return
 
-<!^o::
-<!^+o::
-<!+o::
+!^o::
+!^+o::
+!+o::
     Send, +{End}
 Return
-<!^u::
-<!^+u::
-<!+u::
+!^u::
+!^+u::
+!+u::
     Send, +{Home}
 Return
 
-<!h::
+!h::
     Send, {ShiftDown}{End}{ShiftUp}{Backspace}
 Return
-<!^+h::
+!^+h::
     Send, {End}{ShiftDown}{Home}{Home}{ShiftUp}^c
-<!+h::
+!+h::
     Send, ?{End}{ShiftDown}{Home}{Home}{ShiftUp}{Backspace}{Backspace}  
 Return
-<!^h::
+!^h::
     Send, {End}{ShiftDown}{Home}{ShiftUp}^c{End}{Enter}^v
 Return
 
-<!9::
-<!8::
+!9::
+!8::
     Send, {Up}{Up}{Up}{Up}{Up}{Up}{Up}{Up}
 Return
-<!,::
+!,::
     Send, {Down}{Down}{Down}{Down}{Down}{Down}{Down}{Down}
 Return
-<!+9::
-<!+8::
+!+9::
+!+8::
     Send, {ShiftDown}{Up}{Up}{Up}{Up}{Up}{Up}{Up}{Up}{ShiftUp}
 Return
-<!+,::
+!+,::
     Send, {ShiftDown}{Down}{Down}{Down}{Down}{Down}{Down}{Down}{Down}{ShiftUp}
 Return
 
-<!^9::
-<!^8::
+!^9::
+!^8::
     Send, {PgUp}
 Return
-<!^,::
+!^,::
     Send, {PgDn}
 Return
-<!^+9::
-<!^+8::
+!^+9::
+!^+8::
     Send, +{PgUp}
 Return
-<!^+,::
+!^+,::
     Send, +{PgDn}
 Return
 
@@ -183,27 +199,27 @@ MoveLeftClipboard() {
     }
 }
 
-<!+Enter::  
+!+Enter::  
     Clipboard := ""
     Send, +{End}^c{Backspace}{Down}{End}^v
     MoveLeftClipboard()
 Return
-<!^+Enter::  
+!^+Enter::  
     Clipboard := ""
     Send, +{End}^c{Backspace}{Up}{End}^v
     MoveLeftClipboard()
 Return
-<!Enter::
+!Enter::
     Send, {End}{Enter}
 Return 
-<!^Enter::  
+!^Enter::  
     Send, {Home}{Enter}{Up}
 Return
 
-<!Backspace::
+!Backspace::
     Send,^{Backspace}
 Return
 
-<!s::
+!s::
     Send, {Delete}
 Return
