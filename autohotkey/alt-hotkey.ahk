@@ -3,6 +3,12 @@
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
+; jump multiple words to left or right,
+; remove everything before/after cursor
+; remove word before/after cursor
+
+
+; remove line
 #T::
     Run, "wt.exe"
 Return
@@ -13,11 +19,105 @@ Return
     Send, !{F4}
 Return
 
+; Basic moves
+<!j::
+    Send, {Left}
+Return
+<!l::
+    Send, {Right}
+Return
+<!i::
+    Send, {Up}
+Return
+<!k::
+    Send, {Down}
+Return
+<!o::
+    Send, {End}
+Return
+<!u::
+    Send, {Home}
+Return
+
+; Move word/select to the right
+<!;::
+    Send, ^{Right}
+Return
+<!+;::
+    Send, +^{Right}
+Return
+
+; Move/select word to the left
+<!h::
+    Send, ^{Left}
+Return
+<!+h::
+    Send, +^{Left}
+Return
+
+; Undo/redo/mouseback/mouseforward
 <!z::
     Send, ^{z}
 Return
-<!a::
+<!+z::
     Send, ^{y}
+Return
+<!q::
+    Send, {XButton1}
+Return
+<!+q::
+    Send, {XButton2}
+Return
+
+<!a::
+    Send, {Escape}
+Return
+<!s::
+    Send, {Delete}
+Return
+<!t::
+    Send, {F12}
+Return
+<!+t::
+    Send, +{F12}
+Return
+<!b::
+    Send, ^s
+Return
+<!+b::
+    Send, +^s
+Return
+<!d::
+    Send, ^d
+Return
+<!+d::
+    Send, +{Esc}
+Return
+<!f::
+    Send, ^f
+Return
+<!+f::
+    Send, ^+f
+Return
+<!/::
+    Send, ^/
+Return
+<!.::
+    Send, ^.
+Return
+<!w::
+    Send, ^w
+Return
+<!p::
+    Send, ^p
+Return
+<!+p::
+    Send, +^p
+Return
+
+; Copy/cut/paste
+<!x::
+    Send, ^{x}
 Return
 <!c::
     Send, ^{c}
@@ -25,9 +125,37 @@ Return
 <!v::
     Send, ^{v}
 Return
-<!x::
-    Send, ^{x}
+
+; Delete entire line
+<!'::
+    WinGetActiveTitle, Active
+    If (InStr(Active, "Visual Studio Code")) {
+        Send, +^k
+    }   
+    Else {
+        Send, ?{End}{ShiftDown}{Home}{Home}{ShiftUp}{Backspace}{Backspace}  
+    }
 Return
+;  Duplicate entire line
+<!+'::
+    WinGetActiveTitle, Active
+    If (InStr(Active, "Visual Studio Code")) {
+        Send, ^c^v
+    }   
+    Else {
+         Send, {End}{ShiftDown}{Home}{ShiftUp}^c{End}{Enter}^v
+    }
+Return
+
+; F6::
+;     WinGetActiveTitle, Active
+;     If (InStr(Active, "Visual Studio Code")) {
+;         MsgBox, Yes
+;     }
+;     Else {
+;         MsgBox, No
+;     }
+; Return
 
 GotoInputDown:
     Input, OutputVar, L2, {Enter}{Space}{Esc}
@@ -67,159 +195,120 @@ GotoInputUp:
     }
 Return
 
-!0::
-    Gosub, GotoInputUp
-Return
-!.::
-    Gosub, GotoInputDown
-Return
+;<!0::
+;     Gosub, GotoInputUp
+; Return
+;<!.::
+;     Gosub, GotoInputDown
+; Return
 
-!j::
-    Send, {Left}
-Return
-!l::
-    Send, {Right}
-Return
-!i::
-    Send, {Up}
-Return
-!k::
-    Send, {Down}
-Return
+
 
 LAlt::
-!Space::
+<!Space::
 Return
 
-!^j::
-    Send, ^{Left}
-Return
-!^l::
-    Send, ^{Right}
-Return
-!^i::
+; <!^j::
+;     Send, ^{Left}
+; Return
+; <!^l::
+;     Send, ^{Right}
+; Return
+!>i::
     Send, !{Up} ; move line up
 Return
-!^k::
+!>k::
     Send, !{Down} ; move line down
 Return
 
-!+j::
+<!+j::
     Send, +{Left}
 Return
-!+l::
+<!+l::
     Send, +{Right}
 Return
-!+i::
+<!+i::
     Send, +{Up}
 Return
-!+k::
+<!+k::
     Send, +{Down}
 Return
 
-!+^j::   
-    Send, +^{Left}
+;<!+^j::   
+;    Send, +^{Left}
+; Return
+;<!+^l::
+;    Send, +^{Right}
+; Return
+
+; Create new cursors (vscode)
++!>i::
+    Send, ^!{Up}
 Return
-!+^l::
-    Send, +^{Right}
-Return
-!+^i::
-    Send, +^{Up}
-Return
-!+^k::
-    Send, +^{Down}
++!>k::
+    Send, ^!{Down}
 Return
 
-!o::
-    Send, {End}
-Return
-!u::
-    Send, {Home}
-Return
-
-!^o::
-!^+o::
-!+o::
+; <!^o::
+; <!^+o::
+; Return
+<!+o::
     Send, +{End}
 Return
-!^u::
-!^+u::
-!+u::
+; <!^u::
+; <!^+u::
+; learn
+; Return
+<!+u::
     Send, +{Home}
 Return
 
-!h::
-    Send, {ShiftDown}{End}{ShiftUp}{Backspace}
-Return
-!^+h::
-    Send, {End}{ShiftDown}{Home}{Home}{ShiftUp}^c
-!+h::
-    Send, ?{End}{ShiftDown}{Home}{Home}{ShiftUp}{Backspace}{Backspace}  
-Return
-!^h::
-    Send, {End}{ShiftDown}{Home}{ShiftUp}^c{End}{Enter}^v
-Return
-
-!9::
-!8::
+; Big selects/jumps/moves using 9 and comma
+<!9::
+<!8::
     Send, {Up}{Up}{Up}{Up}{Up}{Up}{Up}{Up}
 Return
-!,::
+<!,::
     Send, {Down}{Down}{Down}{Down}{Down}{Down}{Down}{Down}
 Return
-!+9::
-!+8::
+<!+9::
+<!+8::
     Send, {ShiftDown}{Up}{Up}{Up}{Up}{Up}{Up}{Up}{Up}{ShiftUp}
 Return
-!+,::
+<!+,::
     Send, {ShiftDown}{Down}{Down}{Down}{Down}{Down}{Down}{Down}{Down}{ShiftUp}
 Return
-
-!^9::
-!^8::
+;<!^9::
+;<!^8::
+!>9::
+!>8::
     Send, {PgUp}
 Return
-!^,::
+;<!^,::
+!>,::
     Send, {PgDn}
 Return
-!^+9::
-!^+8::
+;<!^+9::
+;<!^+8::
++!>9::
++!>8::
     Send, +{PgUp}
 Return
-!^+,::
+; <!^+,::
++!>,::
     Send, +{PgDn}
 Return
 
-MoveLeftClipboard() {
-    ClipWait
-    i := StrLen(Clipboard)
-    While i > 0 {
-        Send, {Left}
-        i -= 1
-    }
-}
-
-!+Enter::  
-    Clipboard := ""
-    Send, +{End}^c{Backspace}{Down}{End}^v
-    MoveLeftClipboard()
-Return
-!^+Enter::  
-    Clipboard := ""
-    Send, +{End}^c{Backspace}{Up}{End}^v
-    MoveLeftClipboard()
-Return
-!Enter::
+<!Enter::
     Send, {End}{Enter}
 Return 
-!^Enter::  
+<!^Enter::  
     Send, {Home}{Enter}{Up}
 Return
 
-!Backspace::
+<!Backspace::
     Send,^{Backspace}
 Return
-
-!s::
-    Send, {Delete}
+<!+Backspace::
+    Send,+^{Right}{Backspace}
 Return
