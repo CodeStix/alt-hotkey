@@ -6,9 +6,8 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 ; jump multiple words to left or right,
 ; remove everything before/after cursor
 ; remove word before/after cursor
-
-
 ; remove line
+
 #T::
     Run, "wt.exe"
 Return
@@ -41,10 +40,10 @@ Return
 
 ; Move word/select to the right
 <!;::
-    Send, ^{Right}
+Send, ^{Right}
 Return
 <!+;::
-    Send, +^{Right}
+Send, +^{Right}
 Return
 
 ; Move/select word to the left
@@ -114,6 +113,9 @@ Return
 <!+p::
     Send, +^p
 Return
+>!j::
+    Send, ^j
+Return
 
 ; Copy/cut/paste
 <!x::
@@ -143,7 +145,7 @@ Return
         Send, ^c^v
     }   
     Else {
-         Send, {End}{ShiftDown}{Home}{ShiftUp}^c{End}{Enter}^v
+        Send, {End}{ShiftDown}{Home}{ShiftUp}^c{End}{Enter}^v
     }
 Return
 
@@ -202,10 +204,11 @@ Return
 ;     Gosub, GotoInputDown
 ; Return
 
-
-
 LAlt::
+Return
+
 <!Space::
+    Send, ^{Space}
 Return
 
 ; <!^j::
