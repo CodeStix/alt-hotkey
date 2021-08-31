@@ -1,7 +1,7 @@
-import json
 import os
-from shutil import copyfile
 import sys
+import json
+from shutil import copyfile
 
 OUTPUT_DIR = " ".join(sys.argv[1:])
 TEMPLATE_FILE = os.path.join(os.getcwd(), "template.json")
@@ -13,7 +13,7 @@ def createHotKey(keysString, resultingKeysString):
     key = None
     for i in range(len(spl)):
         sp = spl[i]
-        if sp in ["<alt>",  "<ctrl>", "<hyper>", "<meta>", "<shift>", "<super>"]:
+        if sp in ["<alt>",  "<ctrl>", "<hyper>", "<meta>", "<shift>", "<super>", "<alt_gr>"]:
             modifiers.append(sp)
         else:
             key = sp
@@ -21,8 +21,8 @@ def createHotKey(keysString, resultingKeysString):
     if not key:
         raise Exception("No key was specified")
 
-    file_name = "".join(c for c in keysString if c not in "+<>")
-    config_file_name = os.path.join(OUTPUT_DIR, "." + file_name + ".json")
+    file_name = "".join(c for c in keysString if c not in "+<>/")
+    config_file_name = os.path.join(OUTPUT_DIR, "" + file_name + ".json")
     print("config_file_name", config_file_name)
     copyfile(TEMPLATE_FILE, config_file_name)
     config_file = open(config_file_name, "r+")
