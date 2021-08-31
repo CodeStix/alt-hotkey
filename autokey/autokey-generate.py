@@ -43,6 +43,23 @@ def createHotKey(keysString, resultingKeysString):
     shortcut_file.write(resultingKeysString)
     shortcut_file.close()
 
+createHotKey("<alt>+x", "<ctrl>+x")
+createHotKey("<alt>+c", "<ctrl>+c")
+createHotKey("<alt>+v", "<ctrl>+v")
+createHotKey("<alt>+a", "<ctrl>+a")
+createHotKey("<alt>+e", "<escape>")
+
+createHotKey("<alt>+t", "<f12>")
+createHotKey("<alt>+<shift>+t", "<shift>+<f12>")
+
+createHotKey("<alt>+s", "<delete>")
+createHotKey("<alt>+<shift>+s", "<backspace>")
+
+createHotKey("<alt>+z", "<ctrl>+z")
+createHotKey("<alt>+<shift>+z", "<ctrl>+y")
+
+createHotKey("<alt>+d", "<ctrl>+d")
+createHotKey("<alt>+<shift>+d", "<shift>+<escape>")
 
 createHotKey("<alt>+i", "<up>")
 createHotKey("<alt>+j", "<left>")
@@ -50,49 +67,41 @@ createHotKey("<alt>+k", "<down>")
 createHotKey("<alt>+l", "<right>")
 createHotKey("<alt>+o", "<end>")
 createHotKey("<alt>+u", "<home>")
+createHotKey("<alt>+;", "<ctrl>+<right>")
+createHotKey("<alt>+h", "<ctrl>+<left>")
+
 createHotKey("<alt>+<shift>+i", "<shift>+<up>")
 createHotKey("<alt>+<shift>+j", "<shift>+<left>")
 createHotKey("<alt>+<shift>+k", "<shift>+<down>")
 createHotKey("<alt>+<shift>+l", "<shift>+<right>")
 createHotKey("<alt>+<shift>+o", "<shift>+<end>")
 createHotKey("<alt>+<shift>+u", "<shift>+<home>")
-createHotKey("<alt>+<ctrl>+i", "<alt>+<up>")
-createHotKey("<alt>+<ctrl>+j", "<ctrl>+<left>")
-createHotKey("<alt>+<ctrl>+k", "<alt>+<down>")
-createHotKey("<alt>+<ctrl>+l", "<ctrl>+<right>")
-createHotKey("<alt>+<ctrl>+o", "<shift>+<end>")
-createHotKey("<alt>+<ctrl>+u", "<shift>+<home>")
-createHotKey("<alt>+<shift>+<ctrl>+i", "<ctrl>+<shift>+<up>")
-createHotKey("<alt>+<shift>+<ctrl>+j", "<ctrl>+<shift>+<left>")
-createHotKey("<alt>+<shift>+<ctrl>+k", "<ctrl>+<shift>+<down>")
-createHotKey("<alt>+<shift>+<ctrl>+l", "<ctrl>+<shift>+<right>")
-createHotKey("<alt>+<shift>+<ctrl>+o", "<shift>+<end>")
-createHotKey("<alt>+<shift>+<ctrl>+u", "<shift>+<home>")
+createHotKey("<alt>+<shift>+;", "<ctrl>+<shift>+<right>")
+createHotKey("<alt>+<shift>+h", "<ctrl>+<shift>+<left>")
 
 createHotKey("<alt>+9", "<up><up><up><up><up><up><up><up>")
 createHotKey("<alt>+,", "<down><down><down><down><down><down><down><down>")
-createHotKey("<alt>+<ctrl>+9", "<page_up>")
-createHotKey("<alt>+<ctrl>+,", "<page_down>")
 createHotKey("<alt>+<shift>+9",
              "<shift>+<up><shift>+<up><shift>+<up><shift>+<up><shift>+<up><shift>+<up><shift>+<up><shift>+<up>")
 createHotKey("<alt>+<shift>+,",
              "<shift>+<down><shift>+<down><shift>+<down><shift>+<down><shift>+<down><shift>+<down><shift>+<down><shift>+<down>")
-createHotKey("<alt>+<shift>+<ctrl>+9", "<shift>+<page_up>")
-createHotKey("<alt>+<shift>+<ctrl>+,", "<shift>+<page_down>")
 
-createHotKey("<alt>+h", "<home><home><shift>+<end>")
-createHotKey("<alt>+<ctrl>+<shift>+h",
-             "<home><home><shift>+<end>a<backspace>")
-createHotKey("<alt>+<shift>+h",
-             "<home><home><shift>+<end>a<backspace><backspace>")
-createHotKey("<alt>+<ctrl>+h",
+createHotKey("<alt_gr>+9", "<page_up>")
+createHotKey("<alt_gr>+,", "<page_down>")
+createHotKey("<alt_gr>+<shift>+9", "<shift>+<page_up>")
+createHotKey("<alt_gr>+<shift>+,", "<shift>+<page_down>")
+
+createHotKey("<alt_gr>+i", "<alt>+<up>")
+createHotKey("<alt_gr>+k", "<alt>+<down>")
+
+createHotKey("<alt>+'",
+             "<home><home><shift>+<end><backspace>a<backspace>")
+createHotKey("<alt>+<shift>+'",
              "<home><home><shift>+<end><ctrl>+c<end><enter><ctrl>+v")
 
 createHotKey("<alt>+<enter>", "<end><enter>")
-createHotKey("<alt>+<ctrl>+<enter>", "<home><enter><up>")
 createHotKey("<alt>+<shift>+<enter>", "<home><enter><up>")
-createHotKey("<alt>+<shift>+<ctrl>+<enter>", "<home><enter><up>")
-
-createHotKey("<alt>+s", "<delete>")
 
 createHotKey("<alt>+<backspace>", "<ctrl>+<backspace>")
+createHotKey("<alt>+.", "<ctrl>+.")
+createHotKey("<alt>+/", "<ctrl>+/")
