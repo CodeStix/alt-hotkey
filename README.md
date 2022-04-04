@@ -12,6 +12,11 @@ To use these you need to install [AutoKey](https://github.com/autokey/autokey/re
 Then, either download *autokey/generated.zip* and unzip and import into AutoKey or use the *autokey/autokey-generate.py* script to generate the AutoKey files for you:
 `python3 autokey-generate.py <output_dir>`
 
+
+## macOS
+
+To use these on macOS, you'll need to install [Karabiner](https://karabiner-elements.pqrs.org/). Use the config provided in the karabiner folder to overwrite `~/.config/karabiner/karabiner.json`.
+
 ## Usage
 
 ### Navigation & Selection
