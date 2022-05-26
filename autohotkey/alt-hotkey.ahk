@@ -64,7 +64,7 @@ Return
 <!q::
     Send, {XButton1}
 Return
-<!+q::
+<!e::
     Send, {XButton2}
 Return
 
